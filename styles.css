@@ -41,13 +41,13 @@ h1 span{
     text-align:center;
 }
 
-#buttons{
+#buttons,#extra-options{
     display:flex;
     justify-content: space-between;
     align-items: center;
 }
 
-button{
+#buttons>button{
     width:100px;
     height:100px;
     border-radius: 100%;
@@ -55,12 +55,14 @@ button{
 }
 
 #current-colour{
-    width:20%;
+    width:100%;
     height:20px;
     background-color:black;
+	margin-bottom:20px;
 }
 
 #sketch-area{
+	cursor:crosshair;
     background-color:white;
     width:600px;
     height:600px;
@@ -70,5 +72,35 @@ button{
     position:relative;
 }
 .tile{
-    background-color: white;
+    /*background-color: white;*/
+	box-sizing:border-box;
+	user-select: none;
+    
+}
+
+.animate{
+	animation:fade ease-in-out 2s forwards;
+}
+
+.tile:hover{
+    border:1px solid #CECECE;
+}
+
+#info{
+	display:flex;
+	flex-direction:column;
+	width:200px;
+}
+
+#extra-options button{
+	background-color:white;
+	padding:10px;
+	border:none;
+}
+
+#extra-options button.active{
+	color:white;
+	background-color:#878787;
+	transform: scale(0.92); 
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
